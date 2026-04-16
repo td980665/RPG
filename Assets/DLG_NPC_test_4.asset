@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8264f3228c99cd74fa1d41a1258cb5aa, type: 3}
+  m_Name: DLG_NPC_test_4
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  nodes:
+  - id: start
+    lines: []
+    conditions: []
+    effects: []
+    choices:
+    - text: 
+      nextNodeId: step1
+      conditions:
+      - key: npc_test_step1_done
+        value: 0
+      effects: []
+    - text: 
+      nextNodeId: step2
+      conditions:
+      - key: npc_test_step1_done
+        value: 1
+      - key: npc_test_step2_done
+        value: 0
+      effects: []
+    - text: 
+      nextNodeId: step3
+      conditions:
+      - key: npc_test_step2_done
+        value: 1
+      effects: []
+    nextNodeId: 
+  - id: step1
+    lines:
+    - "\u306F\u3058\u3081\u307E\u3057\u3066"
+    conditions: []
+    effects:
+    - key: npc_test_step1_done
+      value: 1
+    choices: []
+    nextNodeId: 
+  - id: step2
+    lines:
+    - "\u307E\u305F\u304D\u305F\u306D"
+    conditions: []
+    effects:
+    - key: npc_test_step2_done
+      value: 1
+    choices: []
+    nextNodeId: 
+  - id: step3
+    lines:
+    - "\u3082\u3046\u5E38\u9023\u3067\u3059\u306D"
+    conditions: []
+    effects: []
+    choices: []
+    nextNodeId: 

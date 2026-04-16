@@ -1,0 +1,168 @@
+﻿using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+
+public class DialogueManager : MonoBehaviour
+{
+    public static DialogueManager Instance;
+
+    public GameObject dialogueUI;
+    public TextMeshProUGUI dialogueText;
+
+    public GameObject choicesUI;
+    public GameObject choiceButton1;
+    public GameObject choiceButton2;
+
+    public bool isDialogueActive;
+
+    private string[] lines;
+    private int index;
+
+    void Awake()
+    {
+        Instance = this;
+        Debug.Log("DialogueManager Awake: " + gameObject.name);
+    }
+
+    void Update()
+    {
+
+        if (dialogueUI.activeSelf && Input.GetKeyDown(KeyCode.Space)
+            && (choicesUI == null || !choicesUI.activeSelf))
+        {
+            NextLine();
+        }
+    }
+
+    public void StartDialogue(DialogueData dialogue)
+    {
+        if (dialogue == null)
+        {
+            Debug.LogError("DialogueData is null");
+            return;
+        }
+
+        StartDialogue(dialogue.lines);
+    }
+
+    // 通常会話
+    public void StartDialogue(string[] linesData)
+    {
+        // ★強制リセット
+        if (choicesUI != null)
+            choicesUI.SetActive(false);
+
+        dialogueUI.SetActive(true);
+        isDialogueActive = true;
+
+        lines = linesData;
+        index = 0;
+
+        dialogueText.text = lines[index];
+    }
+
+    public void StartDialogueWithChoices(string[] linesData, DialogueEntry[] choices)
+    {
+        dialogueUI.SetActive(true);
+        isDialogueActive = true;
+
+        lines = linesData;
+        index = 0;
+
+        dialogueText.text = lines[index];
+
+        ShowChoices(choices); // 即表示
+    }
+
+    void NextLine()
+    {
+        index++;
+
+        if (index >= lines.Length)
+        {
+            EndDialogue();
+            return;
+        }
+
+        dialogueText.text = lines[index];
+    }
+
+    // ▼選択肢表示（これが無かった）
+    public void ShowChoices(DialogueEntry[] choices)
+    {
+        choicesUI.SetActive(true);
+
+        // ボタン初期化
+        choiceButton1.SetActive(false);
+        choiceButton2.SetActive(false);
+
+        // 1つ目
+        if (choices.Length >= 1)
+        {
+            choiceButton1.SetActive(true);
+
+            var text = choiceButton1.GetComponentInChildren<TextMeshProUGUI>();
+            text.text = choices[0].choiceText;
+
+            var btn = choiceButton1.GetComponent<Button>();
+            btn.onClick.RemoveAllListeners();
+
+            DialogueEntry c0 = choices[0];
+            btn.onClick.AddListener(() => OnChoiceSelected(c0));
+        }
+
+        // 2つ目
+        if (choices.Length >= 2)
+        {
+            choiceButton2.SetActive(true);
+
+            var text = choiceButton2.GetComponentInChildren<TextMeshProUGUI>();
+            text.text = choices[1].choiceText;
+
+            var btn = choiceButton2.GetComponent<Button>();
+            btn.onClick.RemoveAllListeners();
+
+            DialogueEntry c1 = choices[1];
+            btn.onClick.AddListener(() => OnChoiceSelected(c1));
+        }
+    }
+
+    // ▼選択結果処理（ここでフラグが変わる）
+    public void OnChoiceSelected(DialogueEntry entry)
+    {
+        // 選択肢UI閉じる
+        if (choicesUI != null)
+            choicesUI.SetActive(false);
+
+        // ★ここでリセット
+        hasChoices = false;
+        currentChoices = null;
+
+        // フラグ
+        if (!string.IsNullOrEmpty(entry.flagKey))
+        {
+            GameFlagManager.Instance.SetFlag(entry.flagKey, entry.flagValue);
+        }
+
+        // 次の会話
+        if (entry.nextLines != null && entry.nextLines.Length > 0)
+        {
+            StartDialogue(entry.nextLines);
+        }
+        else if (entry.nextDialogue != null)
+        {
+            StartDialogue(entry.nextDialogue);
+        }
+        else
+        {
+            EndDialogue();
+        }
+    }
+
+    public void EndDialogue()
+    {
+        dialogueUI.SetActive(false);
+        choicesUI.SetActive(false);
+        isDialogueActive = false;
+    }
+}

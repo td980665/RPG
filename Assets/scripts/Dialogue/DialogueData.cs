@@ -1,49 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class DialogueNode
-{
-    public string id;
-    [TextArea] public string[] lines;
-
-    public List<Condition> conditions = new List<Condition>();
-    public List<Effect> effects = new List<Effect>();
-
-    public List<Choice> choices = new List<Choice>();
-    public string nextNodeId;
-}
-
-[System.Serializable]
-public class Choice
-{
-    public string text;
-    public string nextNodeId;
-
-    public List<Condition> conditions = new List<Condition>();
-    public List<Effect> effects = new List<Effect>();
-}
-
-[System.Serializable]
-public class Condition
-{
-    public string key;
-    public bool value;
-}
-
-[System.Serializable]
-public class Effect
-{
-    public string key;
-    public bool value;
-}
-
 [CreateAssetMenu(menuName = "RPG/Dialogue")]
 public class DialogueData : ScriptableObject
 {
     public List<DialogueNode> nodes;
 
-    // ★ここに入れる
     void OnValidate()
     {
         if (nodes == null) return;

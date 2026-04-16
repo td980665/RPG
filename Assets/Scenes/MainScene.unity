@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   runner: {fileID: 1980601500}
-  dialogueData: {fileID: 11400000, guid: c0ec86a8364ad7d4bb08ba6b4844e924, type: 2}
+  dialogueData: {fileID: 11400000, guid: 6734b5fb40eb6e8429c9b159c9ada178, type: 2}
   startNodeId: start
   inlineNodes: []
 --- !u!1 &1580029456
@@ -1853,12 +1853,14 @@ MonoBehaviour:
   startNodeId: start
   inlineNodes:
   - id: start
+    type: 0
     lines:
     - OK
+    nextNodeId: 
+    choices: []
+    branches: []
     conditions: []
     effects: []
-    choices: []
-    nextNodeId: 
 --- !u!1 &2006570679
 GameObject:
   m_ObjectHideFlags: 0

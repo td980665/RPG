@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class NPCDialogue : MonoBehaviour, IInteractable
 {
+
     public DialogueRunner runner;
 
     // ▼ Asset
@@ -11,6 +12,32 @@ public class NPCDialogue : MonoBehaviour, IInteractable
 
     // ▼ インライン（Node形式）
     public List<DialogueNode> inlineNodes;
+
+    void Reset()
+    {
+        inlineNodes = new List<DialogueNode>
+    {
+        new DialogueNode
+        {
+            id = "start",
+            type = DialogueRunner.NodeType.Line,
+            lines = new[] { "こんにちは" },
+            nextNodeId = "end",
+            conditions = new List<Condition>(),
+            effects = new List<Effect>()
+        },
+
+        new DialogueNode
+        {
+            id = "end",
+            type = DialogueRunner.NodeType.Line,
+            lines = new[] { "またね" },
+            nextNodeId = "",
+            conditions = new List<Condition>(),
+            effects = new List<Effect>()
+        }
+    };
+    }
 
     public void Interact()
     {
@@ -22,12 +49,19 @@ public class NPCDialogue : MonoBehaviour, IInteractable
         }
 
         // ▼ Asset
-        runner.StartDialogue(dialogueData, startNodeId);
+        if (dialogueData != null)
+        {
+            runner.StartDialogue(dialogueData, startNodeId);
+        }
+        else
+        {
+            Debug.LogError("Dialogueが未設定", this);
+        }
     }
 
     void OnValidate()
     {
-        // inlineチェック
+        // ▼ inlineチェック
         if (inlineNodes != null && inlineNodes.Count > 0)
         {
             bool hasStart = inlineNodes.Exists(n => n.id == "start");
@@ -37,7 +71,7 @@ public class NPCDialogue : MonoBehaviour, IInteractable
             }
         }
 
-        // dataチェック
+        // ▼ dataチェック
         if (dialogueData != null)
         {
             bool hasStart = dialogueData.nodes.Exists(n => n.id == startNodeId);
@@ -47,7 +81,7 @@ public class NPCDialogue : MonoBehaviour, IInteractable
             }
         }
 
-        // 両方設定警告
+        // ▼ 両方設定警告
         if (inlineNodes != null && inlineNodes.Count > 0 && dialogueData != null)
         {
             Debug.LogWarning("inlineとdataの両方が設定されています（inline優先）", this);

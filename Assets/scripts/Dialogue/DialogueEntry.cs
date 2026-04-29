@@ -8,7 +8,7 @@ public class DialogueEntry
 
     [Header("基本設定")]
     public bool isChoice;
-    public int groupId;
+    public string groupId;
 
     [Header("表示テキスト")]
     [TextArea]
@@ -27,4 +27,6 @@ public class DialogueEntry
     [Header("次の遷移（どちらかだけ使う）")]
     public string[] nextLines;
     public DialogueData nextDialogue;
+
+    public string nextNodeId;
 }

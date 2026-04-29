@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System.Collections;
 
 public class DialogueRunner : MonoBehaviour
 {
@@ -15,10 +16,10 @@ public class DialogueRunner : MonoBehaviour
 
     private Dictionary<string, int> visitCount = new Dictionary<string, int>();
 
-    private bool isSelecting = false;
-
     private int safetyCounter = 0;
     private const int MAX_LOOP = 20;
+
+    private bool isProcessing = false;
 
     public void StartDialogue(DialogueData data, string startId)
     {
@@ -126,33 +127,34 @@ public class DialogueRunner : MonoBehaviour
         DialogueManager.Instance.EndDialogue();
     }
 
-    void ShowChoices(List<Choice> choices)
+    DialogueEntry[] ConvertToEntries(DialogueNode node)
     {
-        var dm = DialogueManager.Instance;
+        var list = new List<DialogueEntry>();
 
-        // ▼ 念のため空除外（防御）
-        var filtered = choices
-            .Where(c => !string.IsNullOrEmpty(c.text))
-            .ToList();
-
-        // ▼ 表示するものがなければUI出さない
-        if (filtered.Count == 0)
+        // Line
+        if (node.lines != null && node.lines.Length > 0)
         {
-            Debug.LogError("All choices filtered out (text missing)");
-            dm.choicesUI.SetActive(false);
-            DialogueManager.Instance.EndDialogue();
-            return;
+            list.Add(new DialogueEntry
+            {
+                lines = node.lines,
+                isChoice = false,
+                groupId = node.id
+            });
         }
 
-        dm.choicesUI.SetActive(true);
-        dm.choiceButton1.SetActive(false);
-        dm.choiceButton2.SetActive(false);
+        // Choice
+        foreach (var c in node.choices)
+        {
+            list.Add(new DialogueEntry
+            {
+                isChoice = true,
+                choiceText = c.text,
+                groupId = node.id,
+                nextNodeId = c.nextNodeId
+            });
+        }
 
-        if (filtered.Count >= 1)
-            SetupChoiceButton(dm.choiceButton1, filtered[0]);
-
-        if (filtered.Count >= 2)
-            SetupChoiceButton(dm.choiceButton2, filtered[1]);
+        return list.ToArray();
     }
 
     void SetupChoiceButton(GameObject buttonObj, Choice choice)
@@ -179,24 +181,33 @@ public class DialogueRunner : MonoBehaviour
 
     void OnChoiceSelected(Choice choice)
     {
-        if (isSelecting) return;
-        isSelecting = true;
+        var dm = DialogueManager.Instance;
 
-        DialogueManager.Instance.choicesUI.SetActive(false);
+        dm.choicesUI.SetActive(false);
 
         ApplyEffects(choice.effects);
 
         if (!string.IsNullOrEmpty(choice.nextNodeId))
-        {
             Next(choice.nextNodeId);
-        }
         else
-        {
-            DialogueManager.Instance.EndDialogue();
-        }
+            dm.EndDialogue();
+    }
 
-        // ❌ 消す
-        // isSelecting = false;
+    void ShowChoices(List<Choice> choices)
+    {
+        var dm = DialogueManager.Instance;
+
+        dm.choicesUI.transform.SetAsLastSibling(); // ← UI前面
+
+        dm.choicesUI.SetActive(true);
+        dm.choiceButton1.SetActive(false);
+        dm.choiceButton2.SetActive(false);
+
+        if (choices.Count >= 1)
+            SetupChoiceButton(dm.choiceButton1, choices[0]);
+
+        if (choices.Count >= 2)
+            SetupChoiceButton(dm.choiceButton2, choices[1]);
     }
 
     bool CheckConditions(List<Condition> conditions)
@@ -225,41 +236,28 @@ public class DialogueRunner : MonoBehaviour
 
     void RunLine(DialogueNode node)
     {
-        if (node.lines == null || node.lines.Length == 0)
-        {
-            Debug.LogError($"Line node has no text: {node.id}");
-            Next(node.nextNodeId);
-            return;
-        }
-
         DialogueManager.Instance.onDialogueEnd = () =>
         {
-            Next(node.nextNodeId);
+            DialogueManager.Instance.onDialogueEnd = null;
+            StartCoroutine(NextFrame(node.nextNodeId)); // ★即呼び禁止
         };
-
-        var resolvedLines = node.lines
-             .Select(line => TextResolver.Resolve(line))
-             .ToArray();
 
         DialogueManager.Instance.StartDialogue(
             new[]
             {
-        new DialogueEntry { lines = resolvedLines }
+            new DialogueEntry { lines = node.lines }
             }
         );
     }
 
     void RunChoice(DialogueNode node)
     {
-        if (node.choices == null || node.choices.Count == 0)
-        {
-            Debug.LogError($"Choice runtime empty: {node.id}");
-            DialogueManager.Instance.EndDialogue();
-            return;
-        }
-
         var validChoices = node.choices
-            .Where(c => CheckConditions(c.conditions))
+            .Where(c =>
+                CheckConditions(c.conditions) &&
+                !string.IsNullOrEmpty(c.nextNodeId) &&
+                nodeDict.ContainsKey(c.nextNodeId)
+            )
             .ToList();
 
         if (validChoices.Count == 0)
@@ -269,6 +267,19 @@ public class DialogueRunner : MonoBehaviour
             return;
         }
 
+        // ▼ ここが重要
+        if (node.lines != null && node.lines.Length > 0)
+        {
+            // 文章を表示したまま
+            DialogueManager.Instance.StartDialogue(
+                new[]
+                {
+                new DialogueEntry { lines = node.lines }
+                }
+            );
+        }
+
+        // ▼ 文章の上に選択肢を出す
         ShowChoices(validChoices);
     }
 
@@ -294,15 +305,33 @@ public class DialogueRunner : MonoBehaviour
         DialogueManager.Instance.EndDialogue();
     }
 
-    void Next(string nextId)
+    public void Next(string nextId)
     {
+        if (isProcessing) return;
+        isProcessing = true;
+
         if (string.IsNullOrEmpty(nextId))
         {
+            DialogueManager.Instance.EndDialogue();
+            isProcessing = false;
+            return;
+        }
+
+        if (!nodeDict.ContainsKey(nextId))
+        {
+            Debug.LogWarning("Invalid nextNodeId: " + nextId);
             DialogueManager.Instance.EndDialogue();
             return;
         }
 
-        RunNode(nextId); // ← 直接呼ぶ
+        StartCoroutine(NextFrame(nextId));
+    }
+
+    IEnumerator NextFrame(string id)
+    {
+        yield return null;
+        RunNode(id);
+        isProcessing = false;
     }
 
     void ValidateNode(DialogueNode node)
@@ -312,7 +341,7 @@ public class DialogueRunner : MonoBehaviour
         // ▼ nextNode存在チェック
         if (!string.IsNullOrEmpty(node.nextNodeId) && !nodeDict.ContainsKey(node.nextNodeId))
         {
-            Debug.LogError($"Next node not found: {node.id} -> {node.nextNodeId}");
+            Debug.LogWarning($"Next node not found: {node.id} -> {node.nextNodeId}");
         }
 
         // ▼ Choice遷移チェック
@@ -353,6 +382,7 @@ public class DialogueRunner : MonoBehaviour
         data.nodes = nodes;
 
         StartDialogue(data, startId);
+
     }
 
     void ApplyEffects(List<Effect> effects)
@@ -362,6 +392,23 @@ public class DialogueRunner : MonoBehaviour
         foreach (var e in effects)
         {
             GameFlagManager.Instance.SetBool(e.key, e.value);
+        }
+    }
+
+    void ShowChoiceInternal(DialogueNode node)
+    {
+        var validChoices = node.choices
+            .Where(c =>
+             CheckConditions(c.conditions) &&
+             !string.IsNullOrEmpty(c.nextNodeId) &&
+             nodeDict.ContainsKey(c.nextNodeId)
+        );
+
+        if (!validChoices.Any())
+        {
+            Debug.LogError($"No valid choices: {node.id}");
+            DialogueManager.Instance.EndDialogue();
+            return;
         }
     }
 }

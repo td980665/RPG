@@ -107,6 +107,9 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("ShowChoices: " + choices.Length);
 
+        var dm = DialogueManager.Instance;
+        dm.choicesUI.transform.SetAsLastSibling();
+
         choicesUI.SetActive(true);
 
         choiceButton1.SetActive(false);
@@ -135,33 +138,30 @@ public class DialogueManager : MonoBehaviour
 
     private void OnChoiceSelected(DialogueEntry entry)
     {
-        Debug.Log("Choice selected: " + entry.choiceText);
-
         choicesUI.SetActive(false);
 
         if (!string.IsNullOrEmpty(entry.flagKey))
         {
-            Debug.Log("SetFlag (choice): " + entry.flagKey + " = " + entry.flagValue);
-
             GameFlagManager.Instance.SetBool(entry.flagKey, entry.flagValue);
+        }
+
+        if (!string.IsNullOrEmpty(entry.nextNodeId))
+        {
+            var runner = FindFirstObjectByType<DialogueRunner>();
+            runner.Next(entry.nextNodeId);
         }
         else
         {
-            Debug.Log("Next: end");
-
             EndDialogue();
         }
     }
 
     public void EndDialogue()
     {
-        Debug.Log("Dialogue End");
-
         dialogueUI.SetActive(false);
         choicesUI.SetActive(false);
-        isDialogueActive = false;
-        lines = null;
-        index = 0;
+
+        isDialogueActive = false; // ★これがないと2回目壊れる
 
         onDialogueEnd?.Invoke();
         onDialogueEnd = null;

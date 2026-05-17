@@ -33,6 +33,11 @@ public class PlayerMove : MonoBehaviour
 
     void TryInteract()
     {
+        if (DialogueManager.Instance != null &&
+        DialogueManager.Instance.isDialogueActive)
+        {
+            return;
+        }
 
         // プレイヤー胸あたり
         Vector3 origin = transform.position + Vector3.up * 1.2f;

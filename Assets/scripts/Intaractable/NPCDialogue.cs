@@ -41,6 +41,9 @@ public class NPCDialogue : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (DialogueManager.Instance.isDialogueActive)
+            return;
+
         // ▼ インライン優先
         if (inlineNodes != null && inlineNodes.Count > 0)
         {
@@ -57,6 +60,9 @@ public class NPCDialogue : MonoBehaviour, IInteractable
         {
             Debug.LogError("Dialogueが未設定", this);
         }
+
+        if (DialogueManager.Instance.isDialogueActive)
+            return;
     }
 
     void OnValidate()

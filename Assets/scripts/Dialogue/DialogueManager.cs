@@ -21,6 +21,16 @@ public class DialogueManager : MonoBehaviour
 
     public System.Action onDialogueEnd;
 
+    public bool isTransitioning;
+
+    public enum DialogueState
+    {
+        Idle,
+        ShowingLine,
+        SelectingChoice,
+        Transitioning
+    }
+
     void Awake()
     {
         Instance = this;
@@ -63,8 +73,10 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Lines finished");
 
-            onDialogueEnd?.Invoke();
+            var callback = onDialogueEnd;
             onDialogueEnd = null;
+
+            callback?.Invoke();
 
             return;
         }
@@ -138,6 +150,9 @@ public class DialogueManager : MonoBehaviour
         lines = null;
         index = 0;
 
+        var callback = onDialogueEnd;
         onDialogueEnd = null;
+
+        callback?.Invoke();
     }
 }

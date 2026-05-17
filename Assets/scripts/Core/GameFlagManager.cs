@@ -67,4 +67,33 @@ public class GameFlagManager : MonoBehaviour
 
         return intFlags[key];
     }
+
+    public SaveData CreateSaveData()
+    {
+        SaveData data = new SaveData();
+
+        foreach (var pair in boolFlags)
+        {
+            if (pair.Value)
+            {
+                data.trueFlags.Add(pair.Key);
+            }
+        }
+
+        return data;
+    }
+
+    public void LoadSaveData(SaveData data)
+    {
+        boolFlags.Clear();
+
+        foreach (var key in data.trueFlags)
+        {
+            boolFlags[key] = true;
+        }
+    }
+    public Dictionary<string, bool> GetAllFlags()
+    {
+        return boolFlags;
+    }
 }

@@ -30,140 +30,114 @@ public class DialogueManager : MonoBehaviour
     {
         if (!isDialogueActive) return;
 
-        // 通常会話の進行
-        if (dialogueUI.activeSelf && Input.GetKeyDown(KeyCode.Space) && !choicesUI.activeSelf)
+        // 選択肢表示中は進めない
+        if (
+            dialogueUI.activeSelf &&
+            Input.GetKeyDown(KeyCode.Space) &&
+            !choicesUI.activeSelf
+        )
         {
             NextLine();
         }
     }
 
-    public void StartDialogue(DialogueEntry[] entries)
+    public void ShowLines(string[] newLines)
     {
-        choicesUI.SetActive(false);
-
-        if (dialogueText == null)
-        {
-            Debug.LogError("dialogueText is null");
-            return;
-        }
-
-        if (entries == null || entries.Length == 0)
-        {
-            EndDialogue();
-            return;
-        }
-
         dialogueUI.SetActive(true);
         isDialogueActive = true;
 
-        // 最初の通常会話エントリを取得
-        DialogueEntry start = null;
-        foreach (var e in entries)
-        {
-            if (!e.isChoice)
-            {
-                start = e;
-                break;
-            }
-        }
-        
-        lines = start?.lines ?? new string[] { "(no text)" };
-
+        lines = newLines;
         index = 0;
-        dialogueText.text = lines.Length > 0 ? lines[index] : string.Empty;
 
-        // 選択肢収集
-        List<DialogueEntry> choiceList = new List<DialogueEntry>();
-        foreach (var e in entries)
+        if (lines != null && lines.Length > 0)
         {
-            if (e.isChoice && e.groupId == start?.groupId)
-                choiceList.Add(e);
-        }
-
-        if (choiceList.Count > 0)
-        {
-            ShowChoices(choiceList.ToArray());
-        }
-        else if (lines.Length == 0)
-        {
-            // 会話も選択肢もない場合は即終了
-            EndDialogue();
+            dialogueText.text = lines[0];
         }
     }
 
     void NextLine()
     {
         index++;
+
         if (lines == null || index >= lines.Length)
         {
-            EndDialogue();
+            Debug.Log("Lines finished");
+
+            onDialogueEnd?.Invoke();
+            onDialogueEnd = null;
+
             return;
         }
 
         dialogueText.text = lines[index];
     }
 
-    public void ShowChoices(DialogueEntry[] choices)
+    public void ShowChoices(
+        List<Choice> choices,
+        System.Action<Choice> onSelected
+    )
     {
-        Debug.Log("ShowChoices: " + choices.Length);
-
-        var dm = DialogueManager.Instance;
-        dm.choicesUI.transform.SetAsLastSibling();
-
         choicesUI.SetActive(true);
 
         choiceButton1.SetActive(false);
         choiceButton2.SetActive(false);
 
-        if (choices.Length >= 1)
+        if (choices.Count >= 1)
         {
-            SetupChoiceButton(choiceButton1, choices[0]);
+            SetupChoiceButton(
+                choiceButton1,
+                choices[0],
+                onSelected
+            );
         }
-        if (choices.Length >= 2)
+
+        if (choices.Count >= 2)
         {
-            SetupChoiceButton(choiceButton2, choices[1]);
+            SetupChoiceButton(
+                choiceButton2,
+                choices[1],
+                onSelected
+            );
         }
     }
 
-    private void SetupChoiceButton(GameObject buttonObj, DialogueEntry entry)
+    void SetupChoiceButton(
+        GameObject buttonObj,
+        Choice choice,
+        System.Action<Choice> onSelected
+    )
     {
         buttonObj.SetActive(true);
-        var text = buttonObj.GetComponentInChildren<TextMeshProUGUI>();
-        text.text = entry.choiceText;
+
+        var text =
+            buttonObj.GetComponentInChildren<TextMeshProUGUI>();
+
+        text.text = choice.text;
 
         var btn = buttonObj.GetComponent<Button>();
+
         btn.onClick.RemoveAllListeners();
-        btn.onClick.AddListener(() => OnChoiceSelected(entry));
-    }
 
-    private void OnChoiceSelected(DialogueEntry entry)
-    {
-        choicesUI.SetActive(false);
+        btn.onClick.AddListener(() =>
+        {
+            choicesUI.SetActive(false);
 
-        if (!string.IsNullOrEmpty(entry.flagKey))
-        {
-            GameFlagManager.Instance.SetBool(entry.flagKey, entry.flagValue);
-        }
-
-        if (!string.IsNullOrEmpty(entry.nextNodeId))
-        {
-            var runner = FindFirstObjectByType<DialogueRunner>();
-            runner.Next(entry.nextNodeId);
-        }
-        else
-        {
-            EndDialogue();
-        }
+            onSelected?.Invoke(choice);
+        });
     }
 
     public void EndDialogue()
     {
+        Debug.Log("EndDialogue called");
+
         dialogueUI.SetActive(false);
         choicesUI.SetActive(false);
 
-        isDialogueActive = false; // ★これがないと2回目壊れる
+        isDialogueActive = false;
 
-        onDialogueEnd?.Invoke();
+        lines = null;
+        index = 0;
+
         onDialogueEnd = null;
     }
 }

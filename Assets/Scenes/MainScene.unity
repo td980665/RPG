@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   runner: {fileID: 1980601500}
-  dialogueData: {fileID: 11400000, guid: 91a7eb54be6bd0a48b8ce2ace95a0e30, type: 2}
+  dialogueData: {fileID: 11400000, guid: 74797c8e63a55fc429c19f693a50a80e, type: 2}
   startNodeId: start
   inlineNodes: []
 --- !u!1 &1580029456

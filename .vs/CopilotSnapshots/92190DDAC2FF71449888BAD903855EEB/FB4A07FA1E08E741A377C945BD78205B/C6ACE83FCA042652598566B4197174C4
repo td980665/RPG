@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -19,7 +19,7 @@ public class DialogueRunner : MonoBehaviour
     private int safetyCounter = 0;
     private const int MAX_LOOP = 100;
 
-    bool isTransitioning = false;
+    private bool isProcessing = false;
 
     public void StartDialogue(DialogueData data, string startId)
     {
@@ -84,9 +84,25 @@ public class DialogueRunner : MonoBehaviour
             return;
         }
 
+        // ▼ 文章表示
         if (node.lines != null && node.lines.Length > 0)
         {
-            RunLine(node);
+            DialogueManager.Instance.onDialogueEnd = () =>
+            {
+                DialogueManager.Instance.onDialogueEnd = null;
+                ContinueNode(node);
+            };
+
+            DialogueManager.Instance.StartDialogue(
+                new[]
+                {
+                new DialogueEntry
+                {
+                    lines = node.lines
+                }
+                }
+            );
+
             return;
         }
 
@@ -137,6 +153,36 @@ public class DialogueRunner : MonoBehaviour
         DialogueManager.Instance.EndDialogue();
     }
 
+    DialogueEntry[] ConvertToEntries(DialogueNode node)
+    {
+        var list = new List<DialogueEntry>();
+
+        // Line
+        if (node.lines != null && node.lines.Length > 0)
+        {
+            list.Add(new DialogueEntry
+            {
+                lines = node.lines,
+                isChoice = false,
+                groupId = node.id
+            });
+        }
+
+        // Choice
+        foreach (var c in node.choices)
+        {
+            list.Add(new DialogueEntry
+            {
+                isChoice = true,
+                choiceText = c.text,
+                groupId = node.id,
+                nextNodeId = c.nextNodeId
+            });
+        }
+
+        return list.ToArray();
+    }
+
     void SetupChoiceButton(GameObject buttonObj, Choice choice)
     {
         if (string.IsNullOrEmpty(choice.text))
@@ -161,11 +207,6 @@ public class DialogueRunner : MonoBehaviour
 
     void OnChoiceSelected(Choice choice)
     {
-        if (isTransitioning)
-            return;
-
-        isTransitioning = true;
-
         var dm = DialogueManager.Instance;
 
         dm.choicesUI.SetActive(false);
@@ -176,8 +217,6 @@ public class DialogueRunner : MonoBehaviour
             Next(choice.nextNodeId);
         else
             dm.EndDialogue();
-
-        isTransitioning = false;
     }
 
     void ShowChoices(List<Choice> choices)
@@ -247,7 +286,17 @@ public class DialogueRunner : MonoBehaviour
             }
         }
     }
-    // (duplicate ContinueNode removed)
+    void ContinueNode(DialogueNode node)
+    {
+        if (!string.IsNullOrEmpty(node.nextNodeId))
+        {
+            Next(node.nextNodeId);
+        }
+        else
+        {
+            DialogueManager.Instance.EndDialogue();
+        }
+    }
 
     void RunChoice(DialogueNode node)
     {
@@ -266,17 +315,20 @@ public class DialogueRunner : MonoBehaviour
             return;
         }
 
-        // ▼ 文章表示
+        // ▼ ここが重要
         if (node.lines != null && node.lines.Length > 0)
         {
-            DialogueManager.Instance.ShowLines(node.lines);
+            // 文章を表示したまま
+            DialogueManager.Instance.StartDialogue(
+                new[]
+                {
+                new DialogueEntry { lines = node.lines }
+                }
+            );
         }
 
-        // ▼ 選択肢表示
-        DialogueManager.Instance.ShowChoices(
-            validChoices,
-            OnChoiceSelected
-        );
+        // ▼ 文章の上に選択肢を出す
+        ShowChoices(validChoices);
     }
 
     void RunBranch(DialogueNode node)

@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\buaad\\My project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueRunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Dialogue\\DialogueRunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\dialoguerunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguerunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Dialogue\\DialogueManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:2:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueEntry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Dialogue\\DialogueEntry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\player\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Intaractable\\NPCDialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Intaractable\\NPCDialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\dialoguedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Player\\PlayerData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\intaractable\\npcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\intaractable\\npcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueNode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Dialogue\\DialogueNode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\dialoguenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Dialogue\\DialogueData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\core\\gameflagmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\gameflagmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Core\\GameFlagManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Core\\GameFlagManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:1:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:1:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,30 +42,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DialogueEntry.cs",
-              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueEntry.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueEntry.cs",
-              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueEntry.cs",
-              "RelativeToolTip": "Assets\\scripts\\Dialogue\\DialogueEntry.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvx8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T03:41:28.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "NPCDialogue.cs",
               "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Intaractable\\NPCDialogue.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Intaractable\\NPCDialogue.cs",
               "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Intaractable\\NPCDialogue.cs",
               "RelativeToolTip": "Assets\\scripts\\Intaractable\\NPCDialogue.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T14:24:12.159Z",
               "EditorCaption": ""
@@ -78,34 +65,36 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueRunner.cs",
               "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueRunner.cs",
               "RelativeToolTip": "Assets\\scripts\\Dialogue\\DialogueRunner.cs",
-              "ViewState": "AgIAAFYBAAAAAAAAAAAjwIABAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAWwLQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-09T07:05:10.401Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "DialogueData.cs",
               "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueData.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueData.cs",
               "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueData.cs",
               "RelativeToolTip": "Assets\\scripts\\Dialogue\\DialogueData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAQwCsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwCsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T14:42:28.756Z"
+              "WhenOpened": "2026-04-16T14:42:28.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "PlayerData.cs",
               "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerData.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Player\\PlayerData.cs",
               "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerData.cs",
               "RelativeToolTip": "Assets\\scripts\\Player\\PlayerData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T15:05:11.418Z"
+              "WhenOpened": "2026-04-16T15:05:11.418Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -115,7 +104,7 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueManager.cs",
               "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueManager.cs",
               "RelativeToolTip": "Assets\\scripts\\Dialogue\\DialogueManager.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAjwKcAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAIwFgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-12T07:51:18.451Z",
               "EditorCaption": ""
@@ -134,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "GameFlagManager.cs",
               "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Core\\GameFlagManager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Core\\GameFlagManager.cs",
@@ -143,6 +132,18 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAQwEUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-12T07:49:20.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DialogueManager.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueManager.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\Dialogue\\DialogueManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T13:39:31.348Z"
             }
           ]
         }

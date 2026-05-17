@@ -10,43 +10,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8264f3228c99cd74fa1d41a1258cb5aa, type: 3}
-  m_Name: DLG_NPC_test_5
+  m_Name: "Choice\u57FA\u672C"
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   nodes:
   - id: start
-    lines: []
-    conditions: []
-    effects: []
-    choices: []
-    nextNodeId: ask
-  - id: ask
+    type: 0
     lines:
-    - "\u624B\u4F1D\u3063\u3066\u304F\u308C\u308B"
-    conditions: []
-    effects: []
+    - "\u3053\u3093\u306B\u3061\u306F\n\u8CEA\u554F\u304C\u3042\u308A\u307E\u3059"
+    nextNodeId: 
     choices:
     - text: "\u306F\u3044"
       nextNodeId: yes
       conditions: []
-      effects:
-      - key: npc_test_accepted
-        value: 1
+      effects: []
     - text: "\u3044\u3044\u3048"
       nextNodeId: no
       conditions: []
       effects: []
-    nextNodeId: 
+    branches: []
+    conditions: []
+    effects: []
   - id: yes
+    type: 0
     lines:
-    - "\u52A9\u304B\u308A\u307E\u3059"
-    conditions: []
-    effects: []
+    - "\u3042\u308A\u304C\u3068\u3046"
+    nextNodeId: end
     choices: []
-    nextNodeId: 
+    branches: []
+    conditions: []
+    effects:
+    - key: talked_yes
+      value: 1
   - id: no
+    type: 0
     lines:
-    - "\u305D\u3046\u3067\u3059\u304B..."
+    - "\u305D\u3046\u3067\u3059\u304B"
+    nextNodeId: end
+    choices: []
+    branches: []
     conditions: []
     effects: []
-    choices: []
+  - id: end
+    type: 0
+    lines:
+    - "\u3055\u3088\u3046\u306A\u3089"
     nextNodeId: 
+    choices: []
+    branches: []
+    conditions: []
+    effects: []

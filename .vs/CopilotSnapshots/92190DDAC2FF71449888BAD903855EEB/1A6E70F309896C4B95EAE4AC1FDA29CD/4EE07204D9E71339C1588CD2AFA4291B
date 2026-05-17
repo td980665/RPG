@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -17,9 +17,9 @@ public class DialogueRunner : MonoBehaviour
     private Dictionary<string, int> visitCount = new Dictionary<string, int>();
 
     private int safetyCounter = 0;
-    private const int MAX_LOOP = 100;
+    private const int MAX_LOOP = 20;
 
-    bool isTransitioning = false;
+    private bool isProcessing = false;
 
     public void StartDialogue(DialogueData data, string startId)
     {
@@ -47,16 +47,16 @@ public class DialogueRunner : MonoBehaviour
 
     void RunNode(string id)
     {
-        Debug.Log("RunNode: " + id);
-
         if (!visitCount.ContainsKey(id))
             visitCount[id] = 0;
 
         visitCount[id]++;
 
-        if (visitCount[id] > 1)
+        if (visitCount[id] > 3)
         {
             Debug.LogError("Loop suspected: " + id);
+            DialogueManager.Instance.EndDialogue();
+            return;
         }
 
         safetyCounter++;
@@ -84,9 +84,25 @@ public class DialogueRunner : MonoBehaviour
             return;
         }
 
+        // ▼ 文章表示
         if (node.lines != null && node.lines.Length > 0)
         {
-            RunLine(node);
+            DialogueManager.Instance.onDialogueEnd = () =>
+            {
+                DialogueManager.Instance.onDialogueEnd = null;
+                ContinueNode(node);
+            };
+
+            DialogueManager.Instance.StartDialogue(
+                new[]
+                {
+                new DialogueEntry
+                {
+                    lines = node.lines
+                }
+                }
+            );
+
             return;
         }
 
@@ -137,6 +153,36 @@ public class DialogueRunner : MonoBehaviour
         DialogueManager.Instance.EndDialogue();
     }
 
+    DialogueEntry[] ConvertToEntries(DialogueNode node)
+    {
+        var list = new List<DialogueEntry>();
+
+        // Line
+        if (node.lines != null && node.lines.Length > 0)
+        {
+            list.Add(new DialogueEntry
+            {
+                lines = node.lines,
+                isChoice = false,
+                groupId = node.id
+            });
+        }
+
+        // Choice
+        foreach (var c in node.choices)
+        {
+            list.Add(new DialogueEntry
+            {
+                isChoice = true,
+                choiceText = c.text,
+                groupId = node.id,
+                nextNodeId = c.nextNodeId
+            });
+        }
+
+        return list.ToArray();
+    }
+
     void SetupChoiceButton(GameObject buttonObj, Choice choice)
     {
         if (string.IsNullOrEmpty(choice.text))
@@ -161,11 +207,6 @@ public class DialogueRunner : MonoBehaviour
 
     void OnChoiceSelected(Choice choice)
     {
-        if (isTransitioning)
-            return;
-
-        isTransitioning = true;
-
         var dm = DialogueManager.Instance;
 
         dm.choicesUI.SetActive(false);
@@ -176,8 +217,6 @@ public class DialogueRunner : MonoBehaviour
             Next(choice.nextNodeId);
         else
             dm.EndDialogue();
-
-        isTransitioning = false;
     }
 
     void ShowChoices(List<Choice> choices)
@@ -220,34 +259,34 @@ public class DialogueRunner : MonoBehaviour
 
         return true;
     }
+
     void RunLine(DialogueNode node)
     {
-        DialogueManager.Instance.ShowLines(node.lines);
-
         DialogueManager.Instance.onDialogueEnd = () =>
         {
             DialogueManager.Instance.onDialogueEnd = null;
 
-            ContinueNode(node);
+            // ▼ 選択肢があるなら表示
+            if (node.choices != null && node.choices.Count > 0)
+            {
+                RunChoice(node);
+                return;
+            }
+
+            // ▼ 通常遷移
+            Next(node.nextNodeId);
         };
 
-        // choices同時表示
-        if (node.choices != null && node.choices.Count > 0)
-        {
-            var validChoices = node.choices
-                .Where(c => CheckConditions(c.conditions))
-                .ToList();
-
-            if (validChoices.Count > 0)
+        DialogueManager.Instance.StartDialogue(
+            new[]
             {
-                DialogueManager.Instance.ShowChoices(
-                    validChoices,
-                    OnChoiceSelected
-                );
+            new DialogueEntry
+            {
+                lines = node.lines
             }
-        }
+            }
+        );
     }
-    // (duplicate ContinueNode removed)
 
     void RunChoice(DialogueNode node)
     {
@@ -266,17 +305,20 @@ public class DialogueRunner : MonoBehaviour
             return;
         }
 
-        // ▼ 文章表示
+        // ▼ ここが重要
         if (node.lines != null && node.lines.Length > 0)
         {
-            DialogueManager.Instance.ShowLines(node.lines);
+            // 文章を表示したまま
+            DialogueManager.Instance.StartDialogue(
+                new[]
+                {
+                new DialogueEntry { lines = node.lines }
+                }
+            );
         }
 
-        // ▼ 選択肢表示
-        DialogueManager.Instance.ShowChoices(
-            validChoices,
-            OnChoiceSelected
-        );
+        // ▼ 文章の上に選択肢を出す
+        ShowChoices(validChoices);
     }
 
     void RunBranch(DialogueNode node)
@@ -303,16 +345,31 @@ public class DialogueRunner : MonoBehaviour
 
     public void Next(string nextId)
     {
-        Debug.Log("Next -> " + nextId);
+        if (isProcessing) return;
+        isProcessing = true;
 
         if (string.IsNullOrEmpty(nextId))
         {
-            Debug.LogError("NextId is empty");
+            DialogueManager.Instance.EndDialogue();
+            isProcessing = false;
+            return;
+        }
+
+        if (!nodeDict.ContainsKey(nextId))
+        {
+            Debug.LogWarning("Invalid nextNodeId: " + nextId);
             DialogueManager.Instance.EndDialogue();
             return;
         }
 
-        RunNode(nextId);
+        StartCoroutine(NextFrame(nextId));
+    }
+
+    IEnumerator NextFrame(string id)
+    {
+        yield return null;
+        RunNode(id);
+        isProcessing = false;
     }
 
     void ValidateNode(DialogueNode node)

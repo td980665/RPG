@@ -10,25 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8264f3228c99cd74fa1d41a1258cb5aa, type: 3}
-  m_Name: DLG_NPC_test_6
+  m_Name: "\u7A7A\u9078\u629E\u80A2"
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   nodes:
   - id: start
-    lines:
-    - "\u5206\u5C90"
+    type: 0
+    lines: []
+    nextNodeId: 
+    choices:
+    - text: 
+      nextNodeId: 
+      conditions: []
+      effects: []
+    branches: []
     conditions: []
     effects: []
-    choices:
-    - text: A
-      nextNodeId: A
-      conditions:
-      - key: flagA
-        value: 1
-      effects: []
-    - text: B
-      nextNodeId: B
-      conditions:
-      - key: flagA
-        value: 1
-      effects: []
-    nextNodeId: 

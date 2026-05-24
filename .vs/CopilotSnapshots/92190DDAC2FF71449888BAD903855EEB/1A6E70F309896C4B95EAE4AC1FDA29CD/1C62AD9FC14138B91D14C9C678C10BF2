@@ -1,0 +1,178 @@
+﻿using System.Linq;
+using UnityEditor;
+using UnityEngine;
+
+[CustomEditor(typeof(DialogueData))]
+public class DialogueDataEditor : Editor
+{
+    private string searchText = "";
+    bool IsReferenced(DialogueData data, string nodeId)
+    {
+        GUILayout.Space(10);
+
+        GUILayout.Label("Search", EditorStyles.boldLabel);
+
+        searchText =
+            EditorGUILayout.TextField(searchText);
+
+        foreach (var n in data.nodes)
+        {
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                bool match = false;
+
+                // id
+                if (node.id.ToLower().Contains(searchText.ToLower()))
+                    match = true;
+
+                // lines
+                if (node.lines != null)
+                {
+                    foreach (var line in node.lines)
+                    {
+                        if (line.ToLower().Contains(searchText.ToLower()))
+                        {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+
+                // choices
+                if (node.choices != null)
+                {
+                    foreach (var c in node.choices)
+                    {
+                        if (c.text.ToLower().Contains(searchText.ToLower()))
+                        {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (!match)
+                    continue;
+            }
+            // next
+            if (n.nextNodeId == nodeId)
+                return true;
+
+            // choices
+            if (n.choices != null)
+            {
+                foreach (var c in n.choices)
+                {
+                    if (c.nextNodeId == nodeId)
+                        return true;
+                }
+            }
+
+            // branches
+            if (n.branches != null)
+            {
+                foreach (var b in n.branches)
+                {
+                    if (b.nextNodeId == nodeId)
+                        return true;
+                }
+            }
+        }
+
+        return false;
+    }
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        GUILayout.Space(20);
+
+        DialogueData data = (DialogueData)target;
+
+        if (data.nodes == null)
+            return;
+
+        GUILayout.Label("Node Preview", EditorStyles.boldLabel);
+
+        foreach (var node in data.nodes)
+        {
+            int duplicateCount =
+            data.nodes.Count(n => n.id == node.id);
+
+            if (duplicateCount > 1)
+            {
+                DrawError("Duplicate ID");
+            }
+
+            void DrawError(string message)
+            {
+                GUI.color = Color.red;
+                GUILayout.Label(message);
+                GUI.color = Color.white;
+            }
+
+            void DrawWarning(string message)
+            {
+                GUI.color = Color.yellow;
+                GUILayout.Label(message);
+                GUI.color = Color.white;
+            }
+
+            if (!string.IsNullOrEmpty(node.nextNodeId))
+            {
+                bool exists = data.nodes.Exists(n => n.id == node.nextNodeId);
+
+                if (!exists)
+                {
+                    DrawError("Missing nextNode: " + node.nextNodeId);
+                }
+            }
+
+            GUILayout.BeginVertical("box");
+
+            GUILayout.Label($"ID: {node.id}");
+
+            if (node.id != "start" &&
+            !IsReferenced(data, node.id))
+            {
+                DrawWarning("Unused node");
+            }
+
+            // lines
+            if (node.lines != null)
+            {
+                foreach (var line in node.lines)
+                {
+                    GUILayout.Label(line);
+                }
+            }
+
+            // next
+            if (!string.IsNullOrEmpty(node.nextNodeId))
+            {
+                GUILayout.Label("Next -> " + node.nextNodeId);
+            }
+
+            // choices
+            if (node.choices != null && node.choices.Count > 0)
+            {
+                GUILayout.Label("Choices:");
+
+                foreach (var c in node.choices)
+                {
+                    bool exists =
+                    data.nodes.Exists(n => n.id == c.nextNodeId);
+
+                    if (!exists)
+                    {
+                        DrawError("Missing choice node: " + c.nextNodeId);
+                    }
+
+                    GUILayout.Label($"- {c.text} -> {c.nextNodeId}");
+                }
+            }
+
+            GUILayout.EndVertical();
+        }
+    }
+}

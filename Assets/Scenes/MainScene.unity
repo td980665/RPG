@@ -1392,13 +1392,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1478415529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11471b14449838468ff66729388d57e, type: 3}
+  m_Script: {fileID: 11500000, guid: f8769ef0adffd8b4a8a01e32af9ce98c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  runner: {fileID: 1980601500}
-  dialogueData: {fileID: 11400000, guid: bbb819c81c13a7b459a1f47abbfa554b, type: 2}
-  startNodeId: start
-  inlineNodes: []
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleNPCDialogue
+  firstDialogue: {fileID: 11400000, guid: 14bc7a063824e5c43bfdcd5f46755b0b, type: 2}
+  firstNodeId: start
+  repeatDialogue: {fileID: 11400000, guid: c91b83d58e609f54fad6593b26a927cd, type: 2}
+  repeatNodeId: start
+  talkedFlag: 
 --- !u!1 &1580029456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,7 +1940,7 @@ GameObject:
   - component: {fileID: 1987495743}
   - component: {fileID: 1987495742}
   - component: {fileID: 1987495741}
-  - component: {fileID: 1987495746}
+  - component: {fileID: 1987495747}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -2063,7 +2064,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1987495746
+--- !u!114 &1987495747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2072,13 +2073,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987495740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11471b14449838468ff66729388d57e, type: 3}
+  m_Script: {fileID: 11500000, guid: f8769ef0adffd8b4a8a01e32af9ce98c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  runner: {fileID: 1980601500}
-  dialogueData: {fileID: 0}
-  startNodeId: start
-  inlineNodes: []
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleNPCDialogue
+  firstDialogue: {fileID: 11400000, guid: 14bc7a063824e5c43bfdcd5f46755b0b, type: 2}
+  firstNodeId: start
+  repeatDialogue: {fileID: 11400000, guid: c91b83d58e609f54fad6593b26a927cd, type: 2}
+  repeatNodeId: start
+  talkedFlag: npc_test_001
 --- !u!1 &2006570679
 GameObject:
   m_ObjectHideFlags: 0

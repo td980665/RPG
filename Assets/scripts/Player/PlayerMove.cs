@@ -33,6 +33,8 @@ public class PlayerMove : MonoBehaviour
 
     void TryInteract()
     {
+        Debug.Log("TryInteract");
+
         if (DialogueManager.Instance != null &&
         DialogueManager.Instance.isDialogueActive)
         {
@@ -48,6 +50,7 @@ public class PlayerMove : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(origin, direction, out hit, interactDistance))
         {
+            Debug.Log(hit.collider);
 
             IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
             if (interactable != null)

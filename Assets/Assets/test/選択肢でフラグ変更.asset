@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: "\u9078\u629E\u80A2\u3067\u30D5\u30E9\u30B0\u5909\u66F4"
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   nodes:
+  - id: accepted
+    type: 0
+    lines:
+    - "\u4F9D\u983C\u3092\u53D7\u6CE8\u3057\u305F"
+    nextNodeId: 
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
   - id: start
     type: 0
     lines:
@@ -29,15 +38,6 @@ MonoBehaviour:
       nextNodeId: refused
       conditions: []
       effects: []
-    branches: []
-    conditions: []
-    effects: []
-  - id: accepted
-    type: 0
-    lines:
-    - "\u4F9D\u983C\u3092\u53D7\u6CE8\u3057\u305F"
-    nextNodeId: 
-    choices: []
     branches: []
     conditions: []
     effects: []

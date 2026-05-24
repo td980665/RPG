@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO;
 
 public class SaveManager : MonoBehaviour
@@ -39,7 +39,37 @@ public class SaveManager : MonoBehaviour
 
         File.WriteAllText(savePath, json);
 
-        Debug.Log("Saved: " + savePath);
+        using UnityEngine;
+
+public class SimpleNPCDialogue : MonoBehaviour
+    {
+        public DialogueData firstDialogue;
+        public string firstNodeId = "start";
+
+        public DialogueData repeatDialogue;
+        public string repeatNodeId = "start";
+
+        public string talkedFlag;
+
+        public void Interact()
+        {
+            var runner = FindFirstObjectByType<DialogueRunner>();
+
+            bool talked = GameFlagManager.Instance.GetBool(talkedFlag);
+
+            if (!talked)
+            {
+                runner.StartDialogue(firstDialogue, firstNodeId);
+
+                GameFlagManager.Instance.SetBool(talkedFlag, true);
+            }
+            else
+            {
+                runner.StartDialogue(repeatDialogue, repeatNodeId);
+            }
+        }
+    }
+    Debug.Log("Saved: " + savePath);
     }
 
     public void Load()

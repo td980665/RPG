@@ -24,14 +24,21 @@ public class GameFlagManager : MonoBehaviour
 
     void InitFlags()
     {
-        SetBool("npc_test_talked_3", false);
+        
     }
 
 
     // ===== Bool =====
     public void SetBool(string key, bool value)
     {
+        if (string.IsNullOrWhiteSpace(key))
+        {
+            Debug.LogWarning("Empty flag key");
+            return;
+        }
+
         boolFlags[key] = value;
+
         Debug.Log($"[Flag] {key} = {value}");
     }
 
@@ -74,13 +81,15 @@ public class GameFlagManager : MonoBehaviour
 
         foreach (var pair in boolFlags)
         {
+            Debug.Log($"SAVE FLAG {pair.Key} = {pair.Value}");
+
             if (pair.Value)
             {
                 data.trueFlags.Add(pair.Key);
             }
         }
 
-        return data;
+    return data;
     }
 
     public void LoadSaveData(SaveData data)
@@ -89,6 +98,8 @@ public class GameFlagManager : MonoBehaviour
 
         foreach (var key in data.trueFlags)
         {
+            Debug.Log("LOAD FLAG " + key);
+
             boolFlags[key] = true;
         }
     }

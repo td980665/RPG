@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8264f3228c99cd74fa1d41a1258cb5aa, type: 3}
+  m_Name: 100
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  nodes:
+  - id: start
+    type: 0
+    lines:
+    - a
+    nextNodeId: 0
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 0
+    type: 0
+    lines:
+    - a
+    nextNodeId: 1
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 1
+    type: 0
+    lines:
+    - a
+    nextNodeId: 2
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 2
+    type: 0
+    lines:
+    - a
+    nextNodeId: 3
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 3
+    type: 0
+    lines:
+    - a
+    nextNodeId: 4
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 4
+    type: 0
+    lines:
+    - a
+    nextNodeId: 5
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 5
+    type: 0
+    lines:
+    - a
+    nextNodeId: 6
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 6
+    type: 0
+    lines:
+    - a
+    nextNodeId: 7
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 7
+    type: 0
+    lines:
+    - a
+    nextNodeId: 8
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 8
+    type: 0
+    lines:
+    - a
+    nextNodeId: 9
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 10
+    type: 0
+    lines:
+    - a
+    nextNodeId: 11
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 11
+    type: 0
+    lines:
+    - a
+    nextNodeId: 12
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 12
+    type: 0
+    lines:
+    - a
+    nextNodeId: 13
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 13
+    type: 0
+    lines:
+    - a
+    nextNodeId: 14
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: 14
+    type: 0
+    lines:
+    - a
+    nextNodeId: 15
+    choices: []
+    branches: []
+    conditions: []
+    effects: []

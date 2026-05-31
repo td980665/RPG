@@ -18,7 +18,7 @@ MonoBehaviour:
     lines: []
     nextNodeId: 
     choices:
-    - text: 
+    - text: a
       nextNodeId: 
       conditions: []
       effects: []

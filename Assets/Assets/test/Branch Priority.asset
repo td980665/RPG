@@ -10,56 +10,54 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8264f3228c99cd74fa1d41a1258cb5aa, type: 3}
-  m_Name: "Choice\u57FA\u672C"
+  m_Name: Branch Priority
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   nodes:
   - id: start
-    type: 0
-    lines:
-    - "\u3053\u3093\u306B\u3061\u306F\n\u8CEA\u554F\u304C\u3042\u308A\u307E\u3059"
+    type: 1
+    lines: []
     nextNodeId: 
-    choices:
-    - text: "\u306F\u3044"
-      nextNodeId: yes
+    choices: []
+    branches:
+    - priority: 0
+      nextNodeId: A
       conditions:
-      - key: 
-        value: 0
-      effects:
       - key: quest_accept
         value: 1
-    - text: "\u3044\u3044\u3048"
-      nextNodeId: no
-      conditions: []
-      effects:
+    - priority: 50
+      nextNodeId: B
+      conditions:
       - key: quest_accept
-        value: 0
-    branches: []
+        value: 1
+    - priority: 100
+      nextNodeId: C
+      conditions:
+      - key: quest_accept
+        value: 1
     conditions: []
     effects: []
-  - id: yes
+  - id: A
     type: 0
     lines:
-    - "\u3042\u308A\u304C\u3068\u3046"
-    nextNodeId: end
-    choices: []
-    branches: []
-    conditions: []
-    effects:
-    - key: talked_yes
-      value: 1
-  - id: no
-    type: 0
-    lines:
-    - "\u305D\u3046\u3067\u3059\u304B"
-    nextNodeId: end
+    - "\u8868\u793A\u3055\u308C\u306A\u3044"
+    nextNodeId: 
     choices: []
     branches: []
     conditions: []
     effects: []
-  - id: end
+  - id: 
     type: 0
     lines:
-    - "\u3055\u3088\u3046\u306A\u3089"
+    - "\u8868\u793A\u3055\u308C\u306A\u3044"
+    nextNodeId: 
+    choices: []
+    branches: []
+    conditions: []
+    effects: []
+  - id: C
+    type: 0
+    lines:
+    - "\u8868\u793A\u3055\u308C\u308B"
     nextNodeId: 
     choices: []
     branches: []

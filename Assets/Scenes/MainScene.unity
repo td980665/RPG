@@ -1397,9 +1397,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SimpleNPCDialogue
   firstDialogue: {fileID: 11400000, guid: 14bc7a063824e5c43bfdcd5f46755b0b, type: 2}
   firstNodeId: start
-  repeatDialogue: {fileID: 11400000, guid: c91b83d58e609f54fad6593b26a927cd, type: 2}
+  repeatDialogue: {fileID: 11400000, guid: 9548f1498184f3f4eb46a9db88cc3a65, type: 2}
   repeatNodeId: start
-  talkedFlag: 
+  talkedFlag: npc_test_002
 --- !u!1 &1580029456
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SimpleNPCDialogue
   firstDialogue: {fileID: 11400000, guid: 14bc7a063824e5c43bfdcd5f46755b0b, type: 2}
   firstNodeId: start
-  repeatDialogue: {fileID: 11400000, guid: c91b83d58e609f54fad6593b26a927cd, type: 2}
+  repeatDialogue: {fileID: 11400000, guid: 74797c8e63a55fc429c19f693a50a80e, type: 2}
   repeatNodeId: start
   talkedFlag: npc_test_001
 --- !u!1 &2006570679

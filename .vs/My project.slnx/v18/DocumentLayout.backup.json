@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\buaad\\My project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\data\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\data\\flagdebugviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\flagdebugviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\core\\gameflagmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\core\\gameflagmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\dialoguerunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguerunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\data\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\player\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\data\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74E0D3A7-19C5-40BE-F11E-E5A32DC37A5D}|Assembly-CSharp-Editor.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\editor\\dialoguedataeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74E0D3A7-19C5-40BE-F11E-E5A32DC37A5D}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\scripts\\editor\\dialoguedataeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\IInteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Player\\IInteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\simplenpcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\simplenpcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\data\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\data\\flagdebugviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\flagdebugviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\intaractable\\npcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,24 +47,16 @@
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\dialoguerunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguerunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\player\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\dialoguedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\buaad\\my project\\assets\\scripts\\dialogue\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Player\\PlayerData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,11 +66,112 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DialogueDataEditor.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Editor\\DialogueDataEditor.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Editor\\DialogueDataEditor.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Editor\\DialogueDataEditor.cs",
+              "RelativeToolTip": "Assets\\scripts\\Editor\\DialogueDataEditor.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAIwCkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-24T18:48:25.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SaveData.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Data\\SaveData.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Data\\SaveData.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Data\\SaveData.cs",
+              "RelativeToolTip": "Assets\\scripts\\Data\\SaveData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T17:25:10.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlayerMove.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerMove.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Player\\PlayerMove.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerMove.cs",
+              "RelativeToolTip": "Assets\\scripts\\Player\\PlayerMove.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T17:06:16.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameFlagManager.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Core\\GameFlagManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Core\\GameFlagManager.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Core\\GameFlagManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\Core\\GameFlagManager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAlwCoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-12T07:49:20.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DialogueRunner.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueRunner.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueRunner.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueRunner.cs",
+              "RelativeToolTip": "Assets\\scripts\\Dialogue\\DialogueRunner.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAnwHkBAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T07:05:10.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IInteractable.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\IInteractable.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Player\\IInteractable.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\IInteractable.cs",
+              "RelativeToolTip": "Assets\\scripts\\Player\\IInteractable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-24T18:29:19.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SimpleNPCDialogue.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs",
+              "RelativeToolTip": "Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-24T18:10:18.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SaveManager.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Data\\SaveManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Data\\SaveManager.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Data\\SaveManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\Data\\SaveManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-17T17:25:53.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "FlagDebugViewer.cs",
               "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Data\\FlagDebugViewer.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Data\\FlagDebugViewer.cs",
@@ -74,56 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SaveManager.cs",
-              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Data\\SaveManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Data\\SaveManager.cs",
-              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Data\\SaveManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\Data\\SaveManager.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwEcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-17T17:25:53.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SaveData.cs",
-              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Data\\SaveData.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Data\\SaveData.cs",
-              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Data\\SaveData.cs",
-              "RelativeToolTip": "Assets\\scripts\\Data\\SaveData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-17T17:25:10.215Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlayerMove.cs",
-              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerMove.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Player\\PlayerMove.cs",
-              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerMove.cs",
-              "RelativeToolTip": "Assets\\scripts\\Player\\PlayerMove.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAADwvw4AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-17T17:06:16.595Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameFlagManager.cs",
-              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Core\\GameFlagManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Core\\GameFlagManager.cs",
-              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Core\\GameFlagManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\Core\\GameFlagManager.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAA3wGEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-12T07:49:20.736Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "DialogueNode.cs",
               "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueNode.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueNode.cs",
@@ -135,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DialogueManager.cs",
               "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueManager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueManager.cs",
@@ -147,19 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DialogueRunner.cs",
-              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueRunner.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueRunner.cs",
-              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueRunner.cs",
-              "RelativeToolTip": "Assets\\scripts\\Dialogue\\DialogueRunner.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAWwLQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T07:05:10.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "NPCDialogue.cs",
               "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Intaractable\\NPCDialogue.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Intaractable\\NPCDialogue.cs",
@@ -171,19 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PlayerData.cs",
-              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerData.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Player\\PlayerData.cs",
-              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerData.cs",
-              "RelativeToolTip": "Assets\\scripts\\Player\\PlayerData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T15:05:11.418Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DialogueData.cs",
               "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\DialogueData.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\DialogueData.cs",
@@ -195,15 +231,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SimpleNPCDialogue.cs",
-              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs",
-              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs",
-              "RelativeToolTip": "Assets\\scripts\\Dialogue\\SimpleNPCDialogue.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "PlayerData.cs",
+              "DocumentMoniker": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerData.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Player\\PlayerData.cs",
+              "ToolTip": "C:\\Users\\buaad\\My project\\Assets\\scripts\\Player\\PlayerData.cs",
+              "RelativeToolTip": "Assets\\scripts\\Player\\PlayerData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T18:10:18.631Z",
+              "WhenOpened": "2026-05-30T23:34:22.984Z",
               "EditorCaption": ""
             }
           ]

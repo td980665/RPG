@@ -10,24 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8264f3228c99cd74fa1d41a1258cb5aa, type: 3}
-  m_Name: "\u7121\u9650\u30EB\u30FC\u30D7\u9632\u6B62"
+  m_Name: "\u4E0D\u6B63Branch"
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   nodes:
   - id: start
-    type: 0
-    lines:
-    - a
-    nextNodeId: B
+    type: 1
+    lines: []
+    nextNodeId: 
     choices: []
-    branches: []
-    conditions: []
-    effects: []
-  - id: B
-    type: 0
-    lines:
-    - b
-    nextNodeId: start
-    choices: []
-    branches: []
+    branches:
+    - priority: 0
+      nextNodeId: missing
+      conditions: []
     conditions: []
     effects: []

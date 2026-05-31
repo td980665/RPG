@@ -10,14 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8264f3228c99cd74fa1d41a1258cb5aa, type: 3}
-  m_Name: "\u7121\u9650\u30EB\u30FC\u30D7\u9632\u6B62"
+  m_Name: "\u30D5\u30E9\u30B0\u5206\u5C90"
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   nodes:
   - id: start
+    type: 1
+    lines: []
+    nextNodeId: 
+    choices: []
+    branches:
+    - priority: 0
+      nextNodeId: A
+      conditions:
+      - key: quest_accept
+        value: 1
+    - priority: 0
+      nextNodeId: B
+      conditions:
+      - key: quest_accept
+        value: 0
+    conditions: []
+    effects: []
+  - id: A
     type: 0
     lines:
-    - a
-    nextNodeId: B
+    - "\u3088\u304F\u3084\u3063\u305F"
+    nextNodeId: 
     choices: []
     branches: []
     conditions: []
@@ -25,8 +43,8 @@ MonoBehaviour:
   - id: B
     type: 0
     lines:
-    - b
-    nextNodeId: start
+    - "\u3056\u3093\u306D\u3093\u3060"
+    nextNodeId: 
     choices: []
     branches: []
     conditions: []

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -54,13 +54,9 @@ public class DialogueRunner : MonoBehaviour
 
         visitCount[id]++;
 
-        Debug.Log($"VisitCount {id} = {visitCount[id]}");
-
-        if (visitCount[id] > 20)
+        if (visitCount[id] > 1)
         {
-            Debug.LogError("Loop detected: " + id);
-            DialogueManager.Instance.EndDialogue();
-            return;
+            Debug.LogError("Loop suspected: " + id);
         }
 
         safetyCounter++;
@@ -203,31 +199,37 @@ public class DialogueRunner : MonoBehaviour
 
     bool CheckConditions(List<Condition> conditions)
     {
-        if (conditions == null || conditions.Count == 0)
-        {
-            Debug.Log("[Check] 条件なし → true");
-            return true;
-        }
-
         foreach (var c in conditions)
         {
             if (string.IsNullOrWhiteSpace(c.key))
                 continue;
 
-            bool flag = GameFlagManager.Instance.GetBool(c.key);
+            bool flag =
+                GameFlagManager.Instance.GetBool(c.key);
 
-            Debug.Log($"[Check] {c.key} = {flag} (need {c.value})");
 
-            if (flag != c.value)
+            if (conditions == null || conditions.Count == 0)
             {
-                Debug.Log($"[Check FAIL] {c.key}");
-                return false;
+                Debug.Log("[Check] 条件なし → true");
+                return true;
+            }
+
+            foreach (var c in conditions)
+            {
+                bool flag = GameFlagManager.Instance.GetBool(c.key);
+
+                Debug.Log($"[Check] {c.key} = {flag} (need {c.value})");
+
+                if (flag != c.value)
+                {
+                    Debug.Log($"[Check FAIL] {c.key}");
+                    return false;
+                }
             }
         }
 
         return true;
     }
-
     void RunLine(DialogueNode node)
     {
         DialogueManager.Instance.ShowLines(node.lines);
